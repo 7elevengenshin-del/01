@@ -1,0 +1,151 @@
+/* ========= Import ฟอนต์ Kanit ========= */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
+
+/* ========= Theme ========= */
+:root{
+  --bg: #0b1220;         /* ดำอมกรม */
+  --panel: #111a2e;      /* พื้นหลังพาแนล */
+  --primary: #1e66f5;    /* น้ำเงินหลัก */
+  --sky: #7cc4ff;        /* ฟ้า */
+  --text: #ffffff;       /* ขาวทั้งหมด */
+  --border: rgba(255,255,255,.08);
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+/* ========= Base ========= */
+*{ box-sizing:border-box }
+html,body{
+  height:100%;
+  margin:0;
+  font-family: 'Kanit', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+a{ color: var(--text); text-decoration: none }
+a:hover{ text-decoration: underline }
+
+/* ========= Utilities ========= */
+.container{ max-width:1200px; margin:0 auto; padding:20px }
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+.widget{
+  padding:16px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  box-shadow: var(--shadow);
+}
+.button{
+  background: var(--primary);
+  color:#fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: transform .06s ease, opacity .2s ease;
+}
+.button:hover{ opacity:.95 }
+.button:active{ transform: translateY(1px) }
+.button.secondary{ background:#23304d }
+.button.danger{ background:#ff4d6d }
+
+.input, input, select, textarea{
+  width:100%;
+  background:#0e182b;
+  color:var(--text);
+  border:1px solid #1b2743;
+  border-radius:10px;
+  padding:10px 12px;
+  outline:none;
+}
+.input:focus, input:focus, select:focus, textarea:focus{
+  box-shadow: 0 0 0 2px rgba(30,102,245,.35);
+  border-color:#2c3f6c;
+}
+
+/* ========= Header ========= */
+header{
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  padding: 20px;
+  text-align: center;
+}
+header h1{
+  font-size: 3rem;     /* ใหญ่ขึ้น ~200% */
+  margin: 0;
+  color: var(--text);
+}
+
+/* ========= Nav ========= */
+nav ul{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  list-style:none;
+  margin: 16px 0;
+  padding:0;
+}
+nav a{
+  display:inline-block;
+  background:#14203a;
+  color:#fff;
+  padding:10px 14px;
+  border-radius:10px;
+}
+nav a.active, nav a:hover{ background: var(--primary) }
+
+/* ========= Layout helpers ========= */
+main{ padding:20px }
+section{ margin: 16px 0 }
+footer{
+  opacity:.7;
+  font-size:12px;
+  padding:20px;
+  border-top:1px solid var(--border);
+  text-align:center;
+}
+
+/* ========= Tables / Grid ========= */
+.table{
+  width:100%;
+  border-collapse:collapse;
+  border:1px solid var(--border);
+}
+.table th, .table td{
+  padding:10px;
+  border-bottom:1px solid var(--border);
+}
+/* ปุ่มในคอลัมน์ “จัดการ” ไม่เบียด */
+.table td{ white-space: nowrap; }
+.table td .button{ margin-right: 6px; }
+
+.grid{ display:grid; gap:16px }
+.grid.cols-2{ grid-template-columns:1fr 1fr }
+.grid.cols-3{ grid-template-columns:repeat(3,1fr) }
+.grid.cols-4{ grid-template-columns:repeat(4,1fr) }
+@media (max-width: 960px){
+  .grid.cols-2,.grid.cols-3,.grid.cols-4{ grid-template-columns:1fr }
+}
+
+/* ========= Badges / Tags ========= */
+.badge{
+  display:inline-block;
+  padding:4px 8px;
+  border-radius:999px;
+  font-weight:600;
+}
+.badge.green{ background:#0e2a1c; color:#b6ffde; border:1px solid #1a7048 }
+.badge.yellow{ background:#261f0f; color:#ffe6a1; border:1px solid #7a5e14 }
+.badge.red{ background:#2a0e17; color:#ffb1c1; border:1px solid #7a1430 }
+.tag{
+  padding:4px 8px;
+  border-radius:8px;
+  background:#132242;
+  color:var(--sky);
+  border:1px solid #20335d;
+}
